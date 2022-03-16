@@ -2,3 +2,4 @@ pollday/pollday/secrets.py
 __pycache__/
 *.txt
 pollday/polls/migrations/
+pollday/db.sqlite3
