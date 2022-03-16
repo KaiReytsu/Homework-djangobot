@@ -14,19 +14,8 @@
         <link rel="stylesheet" 
             type="text/css" 
             href="{% static 'style/color.css' %}">
-        <script>
-            //    scr="{% static 'script/script.js' %}">
-            function toopen(button){
-                var div = button.parentElement;
-                var p_display = div.children[1];
-                if (getComputedStyle(p_display).display == 'none'){
-                    p_display.style.display = 'block';
-                    button.value = '«';
-                }else{
-                    p_display.style.display = 'none';
-                    button.value = '»';
-                }
-            }
+        <script
+            src="{% static 'script/script.js' %}">
         </script>
 	</head>
 	<body>
