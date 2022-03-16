@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Вопросы
+		</title>
+        {% load static %}
+
+        
+        <link rel="stylesheet" 
+            type="text/css" 
+            href="{% static 'style/style.css' %}">
+        <link rel="stylesheet" 
+            type="text/css" 
+            href="{% static 'style/color.css' %}">
+        <script>
+            //    scr="{% static 'script/script.js' %}">
+            function toopen(button){
+                var div = button.parentElement;
+                var p_display = div.children[1];
+                if (getComputedStyle(p_display).display == 'none'){
+                    p_display.style.display = 'block';
+                    button.value = '«';
+                }else{
+                    p_display.style.display = 'none';
+                    button.value = '»';
+                }
+            }
+        </script>
+	</head>
+	<body>
+        <h1>Ответы на вопросы</h1>
+        <ol>
+            <li>
+                Как создать проект? 
+                    
+            </li>
+            <div>
+                <input type="button" value="&raquo;" onclick="toopen(this)">
+                <p> Для создания проекта в папке с проектом надо развернуть виртуальную среду.
+                    Есть разные способы, я использую pipenv: <br/>
+                    Создаю папку Pipfile в папке проекта <br/>
+                    Запускаю <span> pipenv shell</span> <br/>
+                    если успешно, в консоле перед адресом папки будет указано:
+                    (название проекта)/адрес проекта/ <br>
+                    утсновить <span> django: pipenv install Django</span>
+                </p>
+            </div>
+            </ul>
+            <li>
+                Как создать приложение?
+                    
+            </li> 
+            <div>
+                <input type="button" value="&raquo;" onclick="toopen(this)">
+                <p>
+                    <span> django-admin startproject наименование приложения</span>
+                </p>
+            </div>
+            <li>
+                Как запустить тестовый веб-сервер?
+            </li>
+            <div>   
+                <input type="button" value="&raquo;" onclick="toopen(this)">
+                <p>Запуск производится из папки с файлом manage.py. 
+                Для переход использовать команду <span> cd название папки </span>
+                Запуск на linux: <span> python3 manage.py runserver 
+                (5000 пример запуска по заданному порту)</span>
+                </p>
+            </div> 
+            <li>
+                Как открыть на своем компьютере свой сайт на Джанго?
+            </li>
+            <div>
+                <input type="button" value="&raquo;" onclick="toopen(this)">
+                <p>В адресной строке можно ввести локальный ip адрес 127.0.0.1:порт <br>
+                    Так же при запуске тестового веб-сервера можно пройти по ссылке,
+                    которая будет указана в консоле
+                </p>
+            </div> 
+            <li>
+                Как узнать, что мы допустили ошибку при редактировании файлов проекта?
+            </li>
+            <div> 
+                <input type="button" value="&raquo;" onclick="toopen(this)">   
+                <p>Ошибка будет выведена в консоле, так же, возможно, 
+                    тестовый сайт будет отображать ошибку 404
+                </p>
+            </div> 
+            <li>
+                Как вывести на страницу HTML-код?
+            </li>
+            <div>
+                <input type="button" value="&raquo;" onclick="toopen(this)">    
+                <p>HTML страница может быть расположена в папке "templates",
+                    чтобы программа могла найти шаблон, для этого надо прописать в программе
+                    какой шаблон ей надо использовать,
+                    так же можно разместить код в файле views.py,
+                    HttpResponse('html код')
+                </p>
+            </div>  
+            <li>
+                Почему команда запуска веб-сервера "ничего не пишет"?
+            </li>
+            <div>
+                <input type="button" value="&raquo;" onclick="toopen(this)">       
+                <p>
+                    Она пишет: <br>
+                    <span> Watching for file changes with StatReloader <br>
+                    Performing system checks... <br>
+                    <br>
+                    System check identified no issues (0 silenced). <br>
+                    March 16, 2022 - 10:09:22 <br>
+                    Django version 4.0.3, using settings 'pollday.settings' <br>
+                    Starting development server at http://127.0.0.1:5000/ <br>
+                    Quit the server with CONTROL-C.</span>
+                </p>
+            </div> 
+            <li>
+                Почему команда создания проекта или приложения "ничего не пишет"?
+            </li>
+            <div>
+                <input type="button" value="&raquo;" onclick="toopen(this)">     
+                <p>Комнада будет писать в случае скачивания пакетов установки,
+                    при необходимости, так же в случае ошибки, либо нужна специальная команда. <br>
+                    В другом случае при запуске проекта может не выводиться ни одно сообщение
+                </p>
+            </div>  
+            <li>
+                Как проверить результат работы команд создания проекта или приложения?
+            </li>
+            <div>
+                <input type="button" value="&raquo;" onclick="toopen(this)">   
+                <p>
+                    По структуре папок(появятся необходимые для приложения или проекта папки) <br>
+                    или по коду в файлах.
+                </p>
+            </div>  
+            <li>
+                В каком файле пишем код на питоне для создания html-страниц?
+            </li>
+            <div>
+                <input type="button" value="&raquo;" onclick="toopen(this)">     
+                <p>views.py
+
+                </p>
+            </div>  
+
+            <h3>Специальный вопрос:</h3>
+            <li>
+                Как добавить стили в html?
+            </li>
+            <div> 
+                <input type="button" value="&raquo;" onclick="toopen(this)">  
+                <p>Для подключения стилей нужно в папке, где расположен views.py
+                    добавить папку static в которой разместить файлы css. В коде html
+                    добавить <span> &#123;% load static %&#125;</span>
+                </p>
+            </div>  
+        </ol>
+	</body>
+</html>

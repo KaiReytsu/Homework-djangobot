@@ -1,0 +1,10 @@
+body{
+    font-family:        sans-serif;
+}
+h1{
+    font-family:        serif;
+}
+p{
+    width:              50%;
+    display:            none;
+}

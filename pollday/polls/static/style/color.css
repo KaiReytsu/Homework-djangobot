@@ -1,0 +1,13 @@
+body{
+    background-color:   rgb(22, 21, 21);
+    color:              rgb(255, 153, 255);
+}
+h1{
+    color:              rgb(175, 161, 255);
+}
+p{
+    color:              #fffe98;
+}
+span{
+    color:              aquamarine;
+}
