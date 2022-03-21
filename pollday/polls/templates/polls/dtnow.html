@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Время
+		</title>
+        {% load static %}
+
+        
+        <link rel="stylesheet" 
+            type="text/css" 
+            href="{% static 'style/style.css' %}">
+        <link rel="stylesheet" 
+            type="text/css" 
+            href="{% static 'style/color.css' %}">
+        <!-- <script
+            src="{% static 'script/script.js' %}">
+        </script> -->
+	</head>
+	<body class="dt">
+        <p class="datetime">
+            {{ mydate|date:'d-m-Y D H:i' }}
+        </p>
+	</body>
+</html>

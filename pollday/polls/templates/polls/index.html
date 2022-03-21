@@ -27,7 +27,7 @@
             </li>
             <div>
                 <input type="button" value="&raquo;" onclick="toopen(this)">
-                <p> Для создания проекта в папке с проектом надо развернуть виртуальную среду.
+                <p class="qes"> Для создания проекта в папке с проектом надо развернуть виртуальную среду.
                     Есть разные способы, я использую pipenv: <br/>
                     Создаю папку Pipfile в папке проекта <br/>
                     Запускаю <span> pipenv shell</span> <br/>
@@ -43,7 +43,7 @@
             </li> 
             <div>
                 <input type="button" value="&raquo;" onclick="toopen(this)">
-                <p>
+                <p class="qes">
                     <span> django-admin startproject наименование приложения</span>
                 </p>
             </div>
@@ -52,7 +52,7 @@
             </li>
             <div>   
                 <input type="button" value="&raquo;" onclick="toopen(this)">
-                <p>Запуск производится из папки с файлом manage.py. 
+                <p class="qes">Запуск производится из папки с файлом manage.py. 
                 Для переход использовать команду <span> cd название папки </span>
                 Запуск на linux: <span> python3 manage.py runserver 
                 (5000 пример запуска по заданному порту)</span>
@@ -63,7 +63,7 @@
             </li>
             <div>
                 <input type="button" value="&raquo;" onclick="toopen(this)">
-                <p>В адресной строке можно ввести локальный ip адрес 127.0.0.1:порт <br>
+                <p class="qes">В адресной строке можно ввести локальный ip адрес 127.0.0.1:порт <br>
                     Так же при запуске тестового веб-сервера можно пройти по ссылке,
                     которая будет указана в консоле
                 </p>
@@ -73,7 +73,7 @@
             </li>
             <div> 
                 <input type="button" value="&raquo;" onclick="toopen(this)">   
-                <p>Ошибка будет выведена в консоле, так же, возможно, 
+                <p class="qes">Ошибка будет выведена в консоле, так же, возможно, 
                     тестовый сайт будет отображать ошибку 404
                 </p>
             </div> 
@@ -82,7 +82,7 @@
             </li>
             <div>
                 <input type="button" value="&raquo;" onclick="toopen(this)">    
-                <p>HTML страница может быть расположена в папке "templates",
+                <p class="qes">HTML страница может быть расположена в папке "templates",
                     чтобы программа могла найти шаблон, для этого надо прописать в программе
                     какой шаблон ей надо использовать,
                     так же можно разместить код в файле views.py,
@@ -94,7 +94,7 @@
             </li>
             <div>
                 <input type="button" value="&raquo;" onclick="toopen(this)">       
-                <p>
+                <p class="qes">
                     Она пишет: <br>
                     <span> Watching for file changes with StatReloader <br>
                     Performing system checks... <br>
@@ -104,14 +104,14 @@
                     Django version 4.0.3, using settings 'pollday.settings' <br>
                     Starting development server at http://127.0.0.1:5000/ <br>
                     Quit the server with CONTROL-C.</span>
-                </p>
+                </p class="qes">
             </div> 
             <li>
                 Почему команда создания проекта или приложения "ничего не пишет"?
             </li>
             <div>
                 <input type="button" value="&raquo;" onclick="toopen(this)">     
-                <p>Комнада будет писать в случае скачивания пакетов установки,
+                <p class="qes">Комнада будет писать в случае скачивания пакетов установки,
                     при необходимости, так же в случае ошибки, либо нужна специальная команда. <br>
                     В другом случае при запуске проекта может не выводиться ни одно сообщение
                 </p>
@@ -121,7 +121,7 @@
             </li>
             <div>
                 <input type="button" value="&raquo;" onclick="toopen(this)">   
-                <p>
+                <p class="qes">
                     По структуре папок(появятся необходимые для приложения или проекта папки) <br>
                     или по коду в файлах.
                 </p>
@@ -131,7 +131,7 @@
             </li>
             <div>
                 <input type="button" value="&raquo;" onclick="toopen(this)">     
-                <p>views.py
+                <p class="qes">views.py
 
                 </p>
             </div>  
@@ -142,7 +142,7 @@
             </li>
             <div> 
                 <input type="button" value="&raquo;" onclick="toopen(this)">  
-                <p>Для подключения стилей нужно в папке, где расположен views.py
+                <p class="qes">Для подключения стилей нужно в папке, где расположен views.py
                     добавить папку static в которой разместить файлы css. В коде html
                     добавить <span> &#123;% load static %&#125;</span>
                 </p>

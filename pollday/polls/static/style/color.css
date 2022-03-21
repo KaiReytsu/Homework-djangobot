@@ -5,9 +5,15 @@ body{
 h1{
     color:              rgb(175, 161, 255);
 }
-p{
+.qes{
     color:              #fffe98;
 }
 span{
     color:              aquamarine;
+}
+.dt{
+    background-color:   rgb(0, 0, 0);
+}
+.datetime{
+    color:              #06ff4d;
 }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Главная
+		</title>
+        <!-- {% load static %}
+
+        
+        <link rel="stylesheet" 
+            type="text/css" 
+            href="{% static 'style/style.css' %}">
+        <link rel="stylesheet" 
+            type="text/css" 
+            href="{% static 'style/color.css' %}">
+        <script
+            src="{% static 'script/script.js' %}">
+        </script> -->
+	</head>
+	<body>
+        <h1>Выбери страницу</h1>
+        <p>
+            <a href="{% url 'index'%}">Вопросы</a>
+        </p>
+        <p>
+            <a href="{% url 'dtnow'%}">Дата и время</a>
+        </p>
+	</body>
+</html>
