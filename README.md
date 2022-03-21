@@ -9,3 +9,7 @@ touch pollday/pollday/secrets.py
 ```
 SECRET_KEY = 'your secret key'
 ```
+####  Для запуска тестов:
+```
+python3 manage.py test tests
+```
