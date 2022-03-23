@@ -5,3 +5,4 @@ pollday/polls/migrations/
 pollday/db.sqlite3
 *.zip
 .coverage
+.pgpass
