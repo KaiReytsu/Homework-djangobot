@@ -6,3 +6,6 @@ pollday/db.sqlite3
 *.zip
 .coverage
 .pgpass
+.env
+pollday/htmlcov/
+.vscode/

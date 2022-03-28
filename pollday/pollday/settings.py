@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import pollday.secrets as SECRET_KEY
-from .pgpass_helper import read_pgpass
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -73,9 +75,15 @@ WSGI_APPLICATION = 'pollday.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
 DATABASES = {
-    'default': read_pgpass('django_db', BASE_DIR),
+    'default': {
+                'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                'NAME': os.getenv('POSTGRES_DB_NAME'),
+                'USER': os.getenv('POSTGRES_USER'),
+                'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+                'HOST': os.getenv('POSTGRES_HOST'),
+                'PORT': os.getenv('POSTGRES_PORT')
+                },
 }
 
 

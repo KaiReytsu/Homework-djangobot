@@ -13,3 +13,9 @@ SECRET_KEY = 'your secret key'
 ```
 python3 manage.py test tests
 ```
+#### Файл .env.example скопировать как .env
+#### В файле нужно указать имя базы данных, юзера и пароль.
+#### Для запускать базы данных в :
+```
+./runpsql.sh
+```
