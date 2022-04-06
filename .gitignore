@@ -9,3 +9,6 @@ pollday/db.sqlite3
 .env
 pollday/htmlcov/
 .vscode/
+Dockerfile
+pollday/psql_tests.py
+pollday/temperature.json

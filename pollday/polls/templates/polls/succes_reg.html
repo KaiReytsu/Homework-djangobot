@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Удача{% endblock %}
+{% block content %}
+    <p>Ура, успешный вход</p>
+    {% if book_list %}
+    <h1>Список книг</h1>
+    <ul>
+    {% for book in book_list %}
+        <li> 
+            {{book}}
+        </li>
+    {% endfor %}
+    </ul>
+    {%else%}
+    <p>Нет книг &#9785; </p>
+    {%endif%}
+{% endblock %}
