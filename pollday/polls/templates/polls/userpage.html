@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<p>Привет {{ user.first_name }}!</p> 
+<p> 
+    Список доступных  <a href="{% url 'books'%}">книг</a>
+</p>
+<p>
+    Если захочешь <a href="{% url 'logout'%}">выйти</a>, 
+    я тебя не держу
+</p>
+{% endif %}
+{% endblock %}

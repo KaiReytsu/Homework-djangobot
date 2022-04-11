@@ -18,7 +18,7 @@ from django.urls import include, path
 from django.views.debug import default_urlconf
 
 urlpatterns = [
-    path('', default_urlconf),
-    path('polls/', include('polls.urls')),
+    path('django', default_urlconf),
+    path('', include('polls.urls')),
     path('admin/', admin.site.urls),
 ]

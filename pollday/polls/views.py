@@ -24,9 +24,12 @@ class UserLogin(LoginView):
 class UserLogout(LogoutView):
     template_name = 'polls/logout.html'
 
-class BooksList(LoginRequiredMixin, ListView):
+class BooksList(ListView):
     model = Book
-    template_name = 'polls/succes_reg.html'
+    template_name = 'polls/books.html'
+
+def welcome_view(request):
+    return render(request, 'polls/userpage.html')
 
 def index(request):
     return render(request, 'polls/index.html')

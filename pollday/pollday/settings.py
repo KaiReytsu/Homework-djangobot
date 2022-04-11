@@ -89,8 +89,8 @@ DATABASES = {
 
 
 # Password validation
-#LOGIN_REDIRECT_URL
-LOGIN_REDIRECT_URL = 'books'
+LOGIN_REDIRECT_URL = '/welcomepage'
+LOGIN_URL = '../../login'
 
 AUTH_PASSWORD_VALIDATORS = [
     {

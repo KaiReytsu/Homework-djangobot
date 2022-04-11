@@ -6,4 +6,4 @@ class SignUpForm(UserCreationForm):
     email = forms.EmailField()
     class Meta:
         model = User
-        fields = ['username']
+        fields = ['username', 'first_name', 'email', 'password1', 'password2']
