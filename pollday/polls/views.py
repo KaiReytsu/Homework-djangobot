@@ -1,18 +1,32 @@
+from pyexpat import model
+from django.urls import reverse_lazy
 from re import template
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render, redirect
 from datetime import datetime
 from django.contrib.auth import authenticate as auth
-from django.contrib.auth import login
-from django.views import generic
-from .forms import LoginFrom
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import CreateView, ListView
+from .forms import SignUpForm
 from .models import Book
 
-class BooksList(generic.ListView):
+class SignUp(SuccessMessageMixin, CreateView):
+    form_class = SignUpForm
+    success_url = reverse_lazy('login')
+    template_name = 'polls/registration.html'
+
+class UserLogin(LoginView):
+    template_name = 'polls/login.html'
+
+class UserLogout(LogoutView):
+    template_name = 'polls/logout.html'
+
+class BooksList(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'polls/succes_reg.html'
-
 
 def index(request):
     return render(request, 'polls/index.html')
@@ -23,24 +37,6 @@ def dtnow(request):
 
 def startpage(request):
     return render(request, 'polls/startpage.html')
-
-def user_login(request):
-    if request.method == 'POST':
-        form = LoginFrom(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            user = auth(username = cd['логин'], password = cd['пароль'])
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return redirect('books')
-                else:
-                    return render(request, 'polls/fail_reg.html')
-            else:
-                return render(request, 'polls/fail_reg.html')
-    else:
-        form = LoginFrom()
-    return render(request, 'polls/login.html', {'form': form})
 
 
    

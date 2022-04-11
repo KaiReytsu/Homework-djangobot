@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 
 class Author(models.Model):
@@ -19,6 +20,9 @@ class Publisher(models.Model):
         return self.pub_name
 
 class Book(models.Model):
+    class Meta:
+        verbose_name = 'Книга'
+        verbose_name_plural = 'Книги'
     title = models.CharField('Наименование книги', max_length=50)
     genre = models.ManyToManyField(Genre, verbose_name='Жанр')
     author = models.ForeignKey(Author, verbose_name = 'Автор', on_delete=models.SET_NULL, null=True)

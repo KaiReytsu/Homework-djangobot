@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import pollday.secrets as SECRET_KEY
+from django.urls import reverse_lazy
 from dotenv import load_dotenv
 import os
 
@@ -88,7 +89,8 @@ DATABASES = {
 
 
 # Password validation
-# https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
+#LOGIN_REDIRECT_URL
+LOGIN_REDIRECT_URL = 'books'
 
 AUTH_PASSWORD_VALIDATORS = [
     {

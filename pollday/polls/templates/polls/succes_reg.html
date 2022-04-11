@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Удача{% endblock %}
 {% block content %}
-    <p>Ура, успешный вход</p>
+    {% if user.is_authenticated %}
+        Привет {{ user.username }}!
+    {% endif %}
+    <p>Если захочешь <a href="{% url 'logout'%}">выйти</a>, я тебя не держу</p>
     {% if book_list %}
     <h1>Список книг</h1>
     <ul>

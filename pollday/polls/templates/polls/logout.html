@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Выход{% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+        Пока {{ user.username }}!
+        <p> Если захочешь 
+            <a href="{% url 'login'%}">вернуться</a>
+            , я буду только рад
+        </p>
+    {% else %}
+    <p> Приглашаю <a href="{% url 'login'%}">войти</a> снова</p>
+    {% endif %}
+{% endblock %}
