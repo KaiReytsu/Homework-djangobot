@@ -1,15 +1,11 @@
-from pyexpat import model
 from django.urls import reverse_lazy
-from re import template
-from django.http import HttpResponse
-from django.template import loader
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from datetime import datetime
-from django.contrib.auth import authenticate as auth
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, ListView
+from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm
 from .models import Book
 
@@ -24,10 +20,11 @@ class UserLogin(LoginView):
 class UserLogout(LogoutView):
     template_name = 'polls/logout.html'
 
-class BooksList(ListView):
+class BooksList(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'polls/books.html'
 
+@login_required
 def welcome_view(request):
     return render(request, 'polls/userpage.html')
 

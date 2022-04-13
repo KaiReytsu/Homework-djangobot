@@ -4,6 +4,7 @@ __pycache__/
 pollday/polls/migrations/
 pollday/db.sqlite3
 *.zip
+*.jpg
 .coverage
 .pgpass
 .env

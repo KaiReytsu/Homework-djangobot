@@ -1,4 +1,3 @@
-from tabnanny import verbose
 from django.db import models
 
 class Author(models.Model):
@@ -19,6 +18,10 @@ class Publisher(models.Model):
     def __str__(self):
         return self.pub_name
 
+def upload_to(instance, filename):
+    relative_path = instance.url_to_upload.rfind('img/')
+    return instance.url_to_upload[relative_path:]
+
 class Book(models.Model):
     class Meta:
         verbose_name = 'Книга'
@@ -28,6 +31,7 @@ class Book(models.Model):
     author = models.ForeignKey(Author, verbose_name = 'Автор', on_delete=models.SET_NULL, null=True)
     pub_year = models.PositiveIntegerField('Год публикации')
     publisher = models.ForeignKey(Publisher, verbose_name = 'Издательство', on_delete=models.SET_NULL, null=True)
+    image = models.ImageField(verbose_name='Обложка', upload_to=upload_to, null=True)
     def __str__(self):
         return '"%s", %s' %(self.title, self.author)
 
