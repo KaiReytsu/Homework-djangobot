@@ -23,9 +23,9 @@ class Publisher(models.Model):
     def __str__(self):
         return self.pub_name
 
-def upload_to(instance, filename):
-    relative_path = instance.url_to_upload.rfind('img/')
-    return instance.url_to_upload[relative_path:]
+# def upload_img(instance, filename):
+#     relative_path = instance.url_to_upload.rfind('images')
+#     return instance.url_to_upload[relative_path:]
 
 class Book(models.Model):
     class Meta:
@@ -37,7 +37,7 @@ class Book(models.Model):
     author = models.ForeignKey(Author, verbose_name = 'Автор', on_delete=models.SET_NULL, null=True)
     pub_year = models.PositiveIntegerField('Год публикации', validators=[RegexValidator('(1[0-9]{3})|(20[01]\d)|(202[0-2])')])
     publisher = models.ForeignKey(Publisher, verbose_name = 'Издательство', on_delete=models.SET_NULL, null=True)
-    image = models.ImageField(verbose_name='Обложка', upload_to=upload_to, null=True, blank=True)
+    image = models.ImageField(verbose_name='Обложка',upload_to = 'images/', null=True, blank=True)
     def __str__(self):
         return '"%s", %s' %(self.title, self.author)
 

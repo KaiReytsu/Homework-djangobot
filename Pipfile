@@ -8,9 +8,9 @@ django = "*"
 coverage = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
+pillow = "*"
 
 [dev-packages]
 
 [requires]
-
 #python_version = "3.9.5"

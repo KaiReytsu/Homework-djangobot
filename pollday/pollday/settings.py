@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
+    'marks.apps.MarksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,8 +123,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+MEDIA_URL = 'polls/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'polls/media')
 STATIC_URL = 'static/'
 
 # Default primary key field type

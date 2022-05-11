@@ -6,8 +6,9 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, ListView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from .forms import SignUpForm
-from .models import Book
+from .models import Book, Author, Genre
 
 class SignUp(SuccessMessageMixin, CreateView):
     form_class = SignUpForm
@@ -20,9 +21,13 @@ class UserLogin(LoginView):
 class UserLogout(LogoutView):
     template_name = 'polls/logout.html'
 
-class BooksList(LoginRequiredMixin, ListView):
-    model = Book
-    template_name = 'polls/books.html'
+# class BooksList(LoginRequiredMixin, ListView):
+#     model = Book
+#     template_name = 'polls/books.html'
+
+def book_view(request):
+    book = Book.objects.all()
+    return render(request, 'polls/books.html', {"book":book})
 
 @login_required
 def welcome_view(request):

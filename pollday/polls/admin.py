@@ -7,5 +7,3 @@ admin.site.register(Publisher)
 admin.site.register(Book)
 admin.site.register(Year)
 
-
-# Register your models here.

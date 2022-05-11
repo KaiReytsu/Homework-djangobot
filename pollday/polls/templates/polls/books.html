@@ -1,7 +1,23 @@
 {% extends "base.html" %}
 {% block title %}Удача{% endblock %}
 {% block content %}
-    {% if book_list %}
+<ul>
+    {% for item in book %}
+        <li> 
+            {{item}}
+        </li>
+        <img src="{{item.image}}" alt="img">
+    {% endfor %}
+    </ul>
+
+    <!-- <ul>
+        {% for item in author %}
+            <li> 
+                {{item.1}}
+            </li>
+        {% endfor %}
+        </ul> -->
+    <!-- {% if book_list %}
     <h1>Список книг</h1>
     <ul>
     {% for book in book_list %}
@@ -12,5 +28,5 @@
     </ul>
     {%else%}
     <p>Нет книг &#9785; </p>
-    {%endif%}
+    {%endif%} -->
 {% endblock %}
