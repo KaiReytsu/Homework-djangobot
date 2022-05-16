@@ -25,6 +25,7 @@ class UserLogout(LogoutView):
 #     model = Book
 #     template_name = 'polls/books.html'
 
+@login_required
 def book_view(request):
     book = Book.objects.all()
     return render(request, 'polls/books.html', {"book":book})

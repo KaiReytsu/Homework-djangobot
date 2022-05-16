@@ -10,6 +10,8 @@ def index(request):
 
 
 def marks(request):
+    print('Протокол', request.scheme)
+    print('Tipe', type(request.scheme))
     studs_vs_marks = []
     context = {'data':[]}
     for mark in models.Student.objects.all():
@@ -21,7 +23,6 @@ def marks(request):
         mean = 0
 
         for subject in stud:
-            print([subject.lesson])
             mean += subject.grade
         context['data'].append({'student':stud[0].student, 'lesson':stud[0].lesson, 'mark': mean/float(len(stud))})
 
