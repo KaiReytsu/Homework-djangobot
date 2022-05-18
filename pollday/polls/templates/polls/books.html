@@ -4,9 +4,10 @@
 <ul>
     {% for item in book %}
         <li> 
-            {{item}}
+           <img class="bookspg" src="{{item.image.url}}" alt="img"> 
+           <a href="{% url 'book-detail'%}">{{item.title}}</a>
         </li>
-        <img src="{{item.image}}" alt="img">
+        
     {% endfor %}
     </ul>
 

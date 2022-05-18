@@ -15,3 +15,13 @@ h1{
     display:            flex;
     justify-content:    center;
 }
+.bookspg{
+    width: 3%;
+    border-radius: 5px;
+}
+li {
+    list-style-type: none; /* Убираем маркеры */
+   }
+a { 
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+  } 

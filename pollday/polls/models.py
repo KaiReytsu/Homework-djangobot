@@ -23,9 +23,6 @@ class Publisher(models.Model):
     def __str__(self):
         return self.pub_name
 
-# def upload_img(instance, filename):
-#     relative_path = instance.url_to_upload.rfind('images')
-#     return instance.url_to_upload[relative_path:]
 
 class Book(models.Model):
     class Meta:
