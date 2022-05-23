@@ -10,5 +10,5 @@ urlpatterns = [
     path('book/<int:pk>/', views.book_detail_view, name='book-detail'),
     path('start/', views.index, name='index'),
     path('time/', views.dtnow, name='dtnow'),
-    path('welcomepage/', views.welcome_view ,name='welcome')
+    path('welcomepage/', views.welcome_view ,name='welcome'),
 ]

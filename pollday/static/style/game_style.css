@@ -1,0 +1,11 @@
+body{
+    font-style: oblique;
+}
+.emoji{
+    font-style: normal;
+}
+.start_end{
+    background-color: black;
+    border-color: #538789;
+    color: #85cde5;
+}

@@ -23,6 +23,7 @@ urlpatterns = [
     path('django', default_urlconf),
     path('polls/', include('polls.urls')),
     path('marks/', include('marks.urls')),
+    path('game/', include('game.urls')),
     path('admin/', admin.site.urls),
 ]
 if settings.DEBUG:

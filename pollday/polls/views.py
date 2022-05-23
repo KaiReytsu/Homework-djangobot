@@ -42,8 +42,6 @@ def book_view(request):
     book = Book.objects.all()
     return render(request, 'polls/books.html', {"book":book})
 
-
-
 @login_required
 def welcome_view(request):
     return render(request, 'polls/userpage.html')
@@ -57,6 +55,3 @@ def dtnow(request):
 
 def startpage(request):
     return render(request, 'polls/startpage.html')
-
-
-   
