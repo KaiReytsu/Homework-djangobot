@@ -2,6 +2,7 @@ pollday/pollday/secrets.py
 __pycache__/
 *.txt
 pollday/polls/migrations/
+pollday/marks/migrations/
 pollday/db.sqlite3
 *.zip
 *.jpg
@@ -13,3 +14,4 @@ pollday/htmlcov/
 Dockerfile
 pollday/psql_tests.py
 pollday/temperature.json
+/pollday/game/migrations

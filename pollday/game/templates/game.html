@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Угадай число</title>
     {% load static %}
+    {% csrf_token %}
     <link rel="stylesheet" 
     type="text/css" 
     href="{% static 'style/game_style.css' %}">
@@ -12,16 +13,16 @@
     href="{% static 'style/game_color.css' %}">
     <script src = "{% static 'script/game.js' %}"></script>
 </head>
-<body>
+<body class="game_body">
     <div class="gamescreen">
-        <div>
+        <div class="game_rules">
             <h1>Угадай число</h1>
             <p>
                 Задайте диапозон чисел, загадайте число из заданного диапазона <br>
                 компьютер попытается угадать загаданное вами число <span class="emoji">&#128513;</span> 
             </p>
         </div>
-        <div>
+        <div class="game_start">
             <p>
                 Начало диапазона
             </p>
@@ -30,15 +31,17 @@
                 Конец диапазона
             </p>
             <input class="start_end" type="number" placeholder="Введите число" min="0" id="end">
-            <input type="button" value="Начать игру" onclick="startgame()">
+            <div >
+            <input class="start_button" type="button" value="Начать игру" onclick="startgame()"></div>
         </div>
-        <div>
+        <div class="game_question">
             <p>
                 <span id="question">
                 </span>
+                <a id="a_tag" style="display: none;" href="{% url 'statistics'%}">Статистика игры</a>
             </p>
         </div>
-        <div id="yes_or_no" style="display: none;">
+        <div class="game_yes_or_no" id="yes_or_no" style="display: none;">
             <input type="button" value="Да" onclick="more_or_less(this)">
             <input type="button" value="Нет" onclick="more_or_less(this)">
         </div>

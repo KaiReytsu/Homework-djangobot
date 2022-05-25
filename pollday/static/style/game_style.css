@@ -1,11 +1,54 @@
 body{
-    font-style: oblique;
+    font-style:             oblique;
 }
 .emoji{
-    font-style: normal;
+    font-style:             normal;
+}
+.gamescreen{
+    
+    display:                flex;
+    flex-direction:         column;
+    margin-right:           auto;
+    margin-left:            auto;
+    text-align:             center;
+    padding:                6px;
+    border-radius:          12px;
+    width:                  35%;
+    border:                 1px solid;
 }
 .start_end{
-    background-color: black;
-    border-color: #538789;
-    color: #85cde5;
+    width: 118px;
+}
+input[type=button]{
+    font-style:             initial;
+    font-weight:            bold;
+    border-radius:          4px;
+    margin-top:             7px;
+}
+.statistic_table{
+    border-collapse:        collapse;
+}
+.statistic_caption{
+    font-weight:            bold;
+    text-align:             center;
+    padding:                10px 0;
+    font-size:              20px;
+}
+.statistic_header{
+    border:                 2px solid;
+}
+.statistic_th{
+    padding:                5px;
+    border:                 1px solid;
+}
+.statistic_td{
+    text-align:             center;
+    padding:                5px;
+    border:                 1px solid;
+}
+.static_img{
+    position:               fixed;
+    bottom:                 0;
+    right:                  0;
+	width:                  45%;
 }

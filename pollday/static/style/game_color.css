@@ -1,7 +1,36 @@
-body{
-    background-color: #669ca9;
+.game_body{
+    background-color:       #7395ae;
+    color:                  #e1e5e9;
 }
 .start_end{
-    background-color: black;
-    border-color: #538789;
+    background-color:       black;
+    border-color:           #538789;
+    color:                  #85cde5;
+}
+.gamescreen{
+    background-color:       #7d7c7f;
+    border-color:           rgb(12, 12, 12);
+}
+input[type=button]{
+    background-color:       #557a95;
+    color:                  #1a1919;
+}
+.statistic_body{
+    background-color:       #379683;
+    color:                  #EDF5E1;
+}
+.statistic_caption{
+    color:                  #282b26;
+}
+.statistic_header{
+    border-color:           #c8cf11;
+}
+.statistic_th{
+    background-color:       #c8cf11;
+    border-color:           rgb(68 167 31);
+    color:                  #282b26;
+}
+.statistic_td{
+    background-color:       rgb(68 167 31);
+    border-color:           #c8cf11;
 }

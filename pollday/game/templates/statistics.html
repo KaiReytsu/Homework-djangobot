@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Статистика игры</title>
+    
+    {% csrf_token %}
+    {% load static %}
+    <link   
+        rel="stylesheet" 
+        type="text/css" 
+        href="{% static 'style/game_style.css' %}" />
+
+    <link   
+        rel="stylesheet" 
+        type="text/css" 
+        href="{% static 'style/game_color.css' %}" />
+</head>
+<body class="statistic_body">
+    
+    <table class="statistic_table">
+        <caption class="statistic_caption">
+            Статистика прошедших игр
+        </caption>
+        <tr class="statistic_header">
+            <th class="statistic_th">
+                № игры
+            </th>
+            <th class="statistic_th">
+                Дата
+            </th>
+            <th class="statistic_th">
+                Количество ходов
+            </th>
+            <th class="statistic_th">
+                Продолжительность игры
+            </th>
+        </tr>
+        {% for info in game %}
+        <tr>
+            <td class="statistic_td">
+                {{ forloop.counter }}
+            </td>
+            <td class="statistic_td">
+                {{ info.guessing_time|date:'d.m.Y' }}
+                {{ info.guessing_time|time:'H:i' }}
+            </td>
+            <td class="statistic_td">
+                {{ info.moves_number }}
+            </td>
+            <td class="statistic_td">
+                {{ info.duration|time:"H:i:s" }}
+            </td>
+            {% empty %}
+            <td colspan="4" class="statistic_td">Список игр пуст</td> 
+        </tr>
+        
+            
+        {% endfor %}
+    </table>
+    <img class="static_img" src="../../media/images/pngwing.png" alt="tree" />
+</body>
+</html>
